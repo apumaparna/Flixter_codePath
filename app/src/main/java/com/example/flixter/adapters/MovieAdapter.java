@@ -1,6 +1,7 @@
 package com.example.flixter.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.flixter.DetailActivity;
 import com.example.flixter.R;
 import com.example.flixter.models.Movie;
 
@@ -76,8 +78,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             container.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    // 2. Navigate to a new activity on tap
-                    Toast.makeText(context, movie.getTitle(), Toast.LENGTH_SHORT).show();
+                    // 2. Navigate to a new activity on tab
+                    Intent i = new Intent(context, DetailActivity.class);
+                    context.startActivity(i);
                 }
             });
         }
