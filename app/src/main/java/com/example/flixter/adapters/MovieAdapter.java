@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,6 +54,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        RelativeLayout container;
         TextView tvTitle;
         TextView tvOverview;
         ImageView ivPoster;
@@ -62,6 +64,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvOverview = itemView.findViewById(R.id.tvOverview);
             ivPoster = itemView.findViewById(R.id.ivPoster);
+            container = itemView.findViewById(R.id.container);
         }
 
         public void bind(final Movie movie) {
@@ -69,9 +72,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             tvOverview.setText(movie.getOverview());
             Glide.with(context).load(movie.getPosterPath()).into(ivPoster);
 
-            tvTitle.setOnClickListener(new View.OnClickListener() {
+            // 1. Register click listener on the whole row
+            container.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    // 2. Navigate to a new activity on tap
                     Toast.makeText(context, movie.getTitle(), Toast.LENGTH_SHORT).show();
                 }
             });
