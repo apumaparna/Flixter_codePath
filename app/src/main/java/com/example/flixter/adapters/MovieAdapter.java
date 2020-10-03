@@ -19,6 +19,8 @@ import com.example.flixter.DetailActivity;
 import com.example.flixter.R;
 import com.example.flixter.models.Movie;
 
+import org.parceler.Parcels;
+
 import java.util.List;
 
 
@@ -81,6 +83,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                     // 2. Navigate to a new activity on tab
                     Intent i = new Intent(context, DetailActivity.class);
                     i.putExtra("title", movie.getTitle());
+                    i.putExtra("movie", Parcels.wrap(movie));
                     context.startActivity(i);
                 }
             });
