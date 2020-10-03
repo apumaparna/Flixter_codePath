@@ -21,13 +21,10 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 ### App Walkthough GIF
 
-`TODO://` Add the URL to your animated app walkthough `gif` in the image tag below, `YOUR_GIF_URL_HERE`. Make sure the gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after after adding gif)
-
-<img src="YOUR_GIF_URL_HERE" width=250><br>
+<img src="https://github.com/apumaparna/Flixter_codePath/blob/master/walkthrough-flixter-pt-2.gif" width=250><br>
 
 ### Notes
-
-Describe any challenges encountered while building the app.
+One of the major challenges I ran into while working on this was with the rating bar. I was struggling with getting the rating bar to update, and the app would crash everytime I tried moving to the second page. Eventually, I realized I made a syntax error, but it took me some time to catch it. 
 
 ## Open-source libraries used
 - [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
